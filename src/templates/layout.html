@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% block head %}
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/layout.css') }}"
+    />
+    {% endblock head %}
+  </head>
+  <body>
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+    messages %} {% for category, message in messages %}
+
+    <div class="toast toast-{{ category }} visible" id="toast">
+      <div class="toast-body">
+        <input type="checkbox" class="toggle-toast" />
+        <span class="close-toast">X</span>
+        {{ message }}
+      </div>
+    </div>
+    {% endfor %} {% endif %} {% endwith %}
+
+    <!-- Navbar -->
+    <input type="checkbox" class="toggle-menu" />
+    <nav>
+      <div class="hamburgContainer">
+        <div class="hamburgLine"></div>
+      </div>
+      <div class="linkWrapper">
+        {% block links %}
+        <div class="link">
+          <a href="{{ url_for('preRating') }}">Pre Rating</a>
+        </div>
+        <div class="link">
+          <a href="{{ url_for('videoInstructions') }}">Video Instructions</a>
+        </div>
+        <div class="link">
+          <a href="{{ url_for('postRating') }}">Post Rating</a>
+        </div>
+        {% endblock links %}
+      </div>
+    </nav>
+
+    <!-- All other page content -->
+    {% block content %} {% endblock content %}
+  </body>
+</html>

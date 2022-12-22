@@ -1,0 +1,63 @@
+{% extends "layout.html" %} {% block head %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/layout.css') }}"
+/>
+
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/video.css') }}"
+/>
+{% endblock head %} {% block links %}
+
+<div class="link">
+  <a href="{{ url_for('preRating') }}">Pre Rating</a>
+</div>
+<div class="link active">
+  <a href="{{ url_for('videoInstructions') }}">Video Instructions</a>
+</div>
+<div class="link">
+  <a href="{{ url_for('postRating') }}">Post Rating</a>
+</div>
+{% endblock links %} {% block content %}
+<div class="navbarOffset">
+  <div class="container">
+    <div class="pageContainer">
+      <div class="pageTitle">Welcome to Stress</div>
+      <div class="pageContent">
+        <div class="videoDesc">Deep Breathing Excercise</div>
+        <div class="videoContainer">
+          <video
+            id="video"
+            <source
+            src="{{ url_for('static', filename='assets/deepBreathing.mp4') }}"
+          ></video>
+        </div>
+
+        <form id="form" method="POST" action="">
+          <div class="videoControls">
+            <div class="playBtn" id="play">
+              <img
+                id="playBtnIcon"
+                src="{{ url_for('static', filename='assets/play.svg') }}"
+              />
+            </div>
+            <div class="currentTime">
+              <span id="currentVidTime"></span>&nbsp; /&nbsp;
+              <span id="totalVidTime">2:16</span>
+            </div>
+          </div>
+        </form>
+
+        <div class="nextWrapper">
+          <a href="{{ url_for('postRating') }}">
+            <div class="nextBtn">Next</div></a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="{{url_for('static', filename='js/videoPlay.js')}}"></script>
+{% endblock content%}
