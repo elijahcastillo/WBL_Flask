@@ -7,9 +7,9 @@ var form = document.getElementById("form");
 
 //Initalize Video Times
 video.addEventListener("loadedmetadata", function () {
-  //totalTime.innerHTML = " 2:" + Math.round(video.duration % 60);
-  video.currentTime = 130;
+  //video.currentTime = 130;
 });
+
 currentTime.innerHTML = 0;
 
 //Call everytime video updates
@@ -29,22 +29,12 @@ function updateTime() {
 }
 
 //call after video is watched
-video.onended = (e) => {
+video.onended = () => {
   form.submit();
-  // data = {
-  //   watched: true,
-  // };
-  // fetch("/handle-video-watch", {
-  //   method: "POST",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //   },
-  //   body: JSON.stringify(data),
-  // });
 };
 
 //handle user input
-playBtn.addEventListener("click", (e) => {
+playBtn.addEventListener("click", () => {
   if (video.paused) {
     video.play();
     icon.src = "static/assets/pause.svg";
