@@ -37,12 +37,15 @@
         <!-- Video Controls -->
         <form id="form" method="POST" action="">
           <div class="videoControls">
+            <!-- Pause/Play Buttons -->
             <div class="playBtn" id="play">
               <img
                 id="playBtnIcon"
                 src="{{ url_for('static', filename='assets/play.svg') }}"
               />
             </div>
+
+            <!-- Video Time -->
             <div class="currentTime">
               <span id="currentVidTime"></span>&nbsp; /&nbsp;
               <span id="totalVidTime">2:16</span>
