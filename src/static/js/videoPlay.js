@@ -7,7 +7,8 @@ var form = document.getElementById("form");
 
 //Initalize Video Times
 video.addEventListener("loadedmetadata", function () {
-  video.currentTime = 130;
+  //For testing Purposes (Below)
+  //video.currentTime = 130;
 });
 
 currentTime.innerHTML = 0;

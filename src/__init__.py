@@ -12,8 +12,11 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
 #database instance
 db = SQLAlchemy(app)
 
-from src.models import PreRating, PostRating, WatchVideo
-with app.app_context():
-    db.create_all()
+# Uncomment to create database
+# from src.models import PreRating, PostRating, WatchVideo
+# with app.app_context():
+#     db.create_all()
 
+
+#import routes so flask can find them
 from src import routes
