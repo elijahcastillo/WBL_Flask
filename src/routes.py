@@ -2,7 +2,7 @@ from flask import render_template, flash, redirect, url_for, request
 from src import app, db
 from src.forms import RatingForm
 from src.models import PreRating, PostRating, WatchVideo
-from sqlalchemy import select
+
 
 @app.route("/", methods=["POST", "GET"])
 @app.route("/pre-rating", methods=["POST", "GET"])
@@ -27,16 +27,12 @@ def videoInstructions():
     if(request.method == "POST"):
         #check if row has been created
         row = db.session.query(WatchVideo).filter(WatchVideo.id==1).first()
-        print(row)
-        print(type(row))
         if not row :
-            print("ADD ROW")
             watch_counter = WatchVideo()
             db.session.add(watch_counter)
             db.session.commit()
         else:
             #Increment watch count
-            print("NO NEED")
             row.times_watched = row.times_watched + 1
             db.session.commit()
         flash(f"Excercise Compleated", "success")
