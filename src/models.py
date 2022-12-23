@@ -17,7 +17,7 @@ class PostRating(db.Model):
     
 class WatchVideo(db.Model):
     id = db.Column(db.Integer, primary_key = True)
-    times_watched = db.Column(db.Integer, nullable=False, default=0)
+    times_watched = db.Column(db.Integer, nullable=False, default=1)
     
     def __repr__(self):
         return f"Watched('{self.id}'), '{self.times_watched}'"

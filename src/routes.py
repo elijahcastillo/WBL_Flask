@@ -28,6 +28,7 @@ def videoInstructions():
         #check if row has been created
         row = db.session.query(WatchVideo).filter(WatchVideo.id==1).first()
         if not row :
+            #Create new row
             watch_counter = WatchVideo()
             db.session.add(watch_counter)
             db.session.commit()
