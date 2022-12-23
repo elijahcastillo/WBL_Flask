@@ -12,6 +12,7 @@ This is a full stack flask application for the undergraduate WBL internship.
 - (Optional but recommended) Create a virtual environment
 - Install dependencies located in the requiremnts.txt file
 - To host the app on your local machine - run the "run.py" script
+- Then visit [http://127.0.0.1:5000](http://127.0.0.1:5000/)
 
 ## Questions?
 
