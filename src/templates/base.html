@@ -32,17 +32,15 @@
         <div class="hamburgLine"></div>
       </div>
       <div class="linkWrapper">
-        {% block links %}
-        <div class="link">
+        <div class="{{ 'link active' if active_page == 'pre' else 'link' }}">
           <a href="{{ url_for('preRating') }}">Pre Rating</a>
         </div>
-        <div class="link">
+        <div class="{{ 'link active' if active_page == 'video' else 'link' }}">
           <a href="{{ url_for('videoInstructions') }}">Video Instructions</a>
         </div>
-        <div class="link">
+        <div class="{{ 'link active' if active_page == 'post' else 'link' }}">
           <a href="{{ url_for('postRating') }}">Post Rating</a>
         </div>
-        {% endblock links %}
       </div>
     </nav>
 
