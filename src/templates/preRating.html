@@ -1,4 +1,6 @@
-{% extends "layout.html" %} {% block head %}
+{% extends "base.html" %}
+<!-- Set as Active Link -->
+{% set active_page = "pre" %} {% block head %}
 <title>Pre Rating</title>
 <link
   rel="stylesheet"
@@ -9,18 +11,7 @@
   rel="stylesheet"
   href="{{ url_for('static', filename='css/form.css') }}"
 />
-{% endblock head %} {% block links %}
-
-<div class="link active">
-  <a href="{{ url_for('preRating') }}">Pre Rating</a>
-</div>
-<div class="link">
-  <a href="{{ url_for('videoInstructions') }}">Video Instructions</a>
-</div>
-<div class="link">
-  <a href="{{ url_for('postRating') }}">Post Rating</a>
-</div>
-{% endblock links %} {% block content %}
+{% endblock head %} {% block content %}
 <div class="navbarOffset">
   <div class="container">
     <div class="pageContainer">
