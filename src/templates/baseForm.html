@@ -1,0 +1,19 @@
+{% extends "base.html" %} {% block content %}
+<div class="navbarOffset">
+  <div class="container">
+    <div class="pageContainer">
+      {% block formTitle %} {% endblock formTitle %}
+      <div class="pageContent">
+        <div class="formDesc">Rate your Stress Level on a Scale of 1 to 5</div>
+        <div class="formWrapper">
+          <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <div class="formRadio">{{ form.rating }}</div>
+            <div class="formSubmit">{{ form.submit }}</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content%}

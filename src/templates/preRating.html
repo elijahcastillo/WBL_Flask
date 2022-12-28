@@ -1,6 +1,4 @@
-{% extends "base.html" %}
-<!-- Set as Active Link -->
-{% set active_page = "pre" %} {% block head %}
+{% extends "baseForm.html" %} {% set active_page = "pre" %} {% block head %}
 <title>Pre Rating</title>
 <link
   rel="stylesheet"
@@ -11,22 +9,6 @@
   rel="stylesheet"
   href="{{ url_for('static', filename='css/form.css') }}"
 />
-{% endblock head %} {% block content %}
-<div class="navbarOffset">
-  <div class="container">
-    <div class="pageContainer">
-      <div class="pageTitle">Welcome to Pre Stress Management Exercise</div>
-      <div class="pageContent">
-        <div class="formDesc">Rate your Stress Level on a Scale of 1 to 5</div>
-        <div class="formWrapper">
-          <form method="POST" action="">
-            {{ form.hidden_tag() }}
-            <div class="formRadio">{{ form.rating }}</div>
-            <div class="formSubmit">{{ form.submit }}</div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-{% endblock content%}
+{% endblock head %} {% block formTitle %}
+<div class="pageTitle">Welcome to Pre Stress Management Exercise</div>
+{% endblock formTitle %}
