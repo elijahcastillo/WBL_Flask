@@ -1,4 +1,6 @@
 var playBtn = document.getElementById("play");
+var back10 = document.getElementById("back10");
+var foward10 = document.getElementById("foward10");
 var icon = document.getElementById("playBtnIcon");
 var video = document.getElementById("video");
 var currentTime = document.getElementById("currentVidTime");
@@ -10,7 +12,6 @@ video.addEventListener("loadedmetadata", function () {
   //For testing Purposes (Below)
   //video.currentTime = 130;
 });
-
 currentTime.innerHTML = 0;
 
 //Call everytime video updates
@@ -43,4 +44,14 @@ playBtn.addEventListener("click", () => {
     video.pause();
     icon.src = "static/assets/play.svg";
   }
+});
+
+back10.addEventListener("click", () => {
+  //skip back 10 seconds
+  video.currentTime -= 10;
+});
+
+foward10.addEventListener("click", () => {
+  //skip foward 10 seconds
+  video.currentTime += 10;
 });

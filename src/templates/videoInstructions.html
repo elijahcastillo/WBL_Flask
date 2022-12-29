@@ -30,12 +30,30 @@
         <!-- Video Controls -->
         <form id="form" method="POST" action="">
           <div class="videoControls">
-            <!-- Pause/Play Buttons -->
-            <div class="playBtn" id="play">
-              <img
-                id="playBtnIcon"
-                src="{{ url_for('static', filename='assets/play.svg') }}"
-              />
+            <div class="userBtns">
+              <!-- Pause/Play Buttons -->
+              <div class="playBtn" id="play">
+                <img
+                  id="playBtnIcon"
+                  src="{{ url_for('static', filename='assets/play.svg') }}"
+                />
+              </div>
+
+              <!-- Skip Ahead/Back -->
+              <div class="skip">
+                <div class="playBtn">
+                  <img
+                    id="back10"
+                    src="{{ url_for('static', filename='assets/backwards10s.png') }}"
+                  />
+                </div>
+                <div class="playBtn">
+                  <img
+                    id="foward10"
+                    src="{{ url_for('static', filename='assets/foward10s.png') }}"
+                  />
+                </div>
+              </div>
             </div>
 
             <!-- Video Time -->
