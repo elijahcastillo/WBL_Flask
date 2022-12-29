@@ -11,7 +11,7 @@
 }
 
 .formRadio {
-  width: 70%;
+  width: 60%;
   margin: 0 auto;
   margin-top: 20px;
 }
@@ -48,7 +48,7 @@
 .formSubmit {
   display: flex;
   justify-content: center;
-  margin: 5% 0;
+  margin: 8% 0;
 }
 
 .formSubmit > input[type="submit"] {
@@ -64,10 +64,22 @@
   .formRadio > ul {
     display: flex;
     flex-direction: column;
+    gap: 15px;
   }
 
   .formRadio > ul > li {
+    flex-direction: row;
+    justify-content: center;
     margin-top: 15px;
-    gap: 5px;
+    gap: 20px;
+  }
+
+  .formRadio > ul > li > label {
+    display: flex;
+    align-items: center;
+  }
+
+  .formRadio > ul > li > input[type="radio"] {
+    margin: 0;
   }
 }
