@@ -33,13 +33,15 @@
       </div>
       <div class="linkWrapper">
         <div class="{{ 'link active' if active_page == 'pre' else 'link' }}">
-          <a href="{{ url_for('preRating') }}">Pre Rating</a>
+          <a href="{{ url_for('routes.preRating') }}">Pre Rating</a>
         </div>
         <div class="{{ 'link active' if active_page == 'video' else 'link' }}">
-          <a href="{{ url_for('videoInstructions') }}">Video Instructions</a>
+          <a href="{{ url_for('routes.videoInstructions') }}"
+            >Video Instructions</a
+          >
         </div>
         <div class="{{ 'link active' if active_page == 'post' else 'link' }}">
-          <a href="{{ url_for('postRating') }}">Post Rating</a>
+          <a href="{{ url_for('routes.postRating') }}">Post Rating</a>
         </div>
       </div>
     </nav>

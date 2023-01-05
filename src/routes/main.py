@@ -1,11 +1,15 @@
-from flask import render_template, flash, redirect, url_for, request
-from src import app, db
-from src.forms import RatingForm
-from src.models import PreRating, PostRating, WatchVideo
+from flask import Blueprint, render_template, flash, redirect, url_for, request
+from src.routes.forms import RatingForm
+from src.models import PreRating, WatchVideo, PostRating
+from src import db
 
 
-@app.route("/", methods=["POST", "GET"])
-@app.route("/pre-rating", methods=["POST", "GET"])
+routes = Blueprint("routes", __name__, template_folder="/")
+
+
+
+@routes.route("/", methods=["POST", "GET"])
+@routes.route("/pre-rating", methods=["POST", "GET"])
 def preRating():
     form = RatingForm()
     if form.validate_on_submit():
@@ -17,12 +21,12 @@ def preRating():
         
         #redirect user to next page
         flash(f"Pre Stress level recorded as {rating}", "success")
-        return redirect(url_for("videoInstructions"))
+        return redirect(url_for("routes.videoInstructions"))
         
     
     return render_template("preRating.html", form=form)
 
-@app.route("/video-instructions", methods=["POST", "GET"])
+@routes.route("/video-instructions", methods=["POST", "GET"])
 def videoInstructions():
     if(request.method == "POST"):
         #check if row has been created
@@ -41,7 +45,7 @@ def videoInstructions():
 
 
 
-@app.route("/post-rating", methods=["POST", "GET"])
+@routes.route("/post-rating", methods=["POST", "GET"])
 def postRating():
     form = RatingForm()
     if form.validate_on_submit():
