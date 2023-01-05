@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, flash, redirect, url_for, request
-from src.routes.forms import RatingForm
+from src.forms import RatingForm
 from src.models import PreRating, WatchVideo, PostRating
 from src import db
 
