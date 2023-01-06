@@ -16,8 +16,8 @@ This is a full stack flask application for the undergraduate WBL internship.
 
 ## Tests
 
--To run the tests, first make sure all external depedencies are installed
--Then run "pytest" in the terminal while in root of the directory
+- To run the tests, first make sure all external depedencies are installed
+- Then run "pytest" in the terminal while in root of the directory
 
 ## Questions?
 
