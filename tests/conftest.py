@@ -9,6 +9,7 @@ def app():
     app.config['TESTING'] = True
     app.config['WTF_CSRF_ENABLED'] = False
     
+    #Create temporary databse for the tests
     with app.app_context():
         db.create_all()
         
