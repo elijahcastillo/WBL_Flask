@@ -1,6 +1,6 @@
 # WBL Flask App
 
-This is a full stack flask application for the undergraduate WBL internship.
+This is a full stack flask application for the undergraduate WBL internship. Change
 
 ## Video
 
@@ -22,6 +22,3 @@ This is a full stack flask application for the undergraduate WBL internship.
 ## Questions?
 
 For any questions for concerns please contact me at: elijah.castillo202@gmail.com
-
-
-
